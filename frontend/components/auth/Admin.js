@@ -8,7 +8,7 @@ const Admin = ({ children }) => {
   useEffect(() => {
     if (!isAuth()) {
       router.push(`/signin`);
-    } else if (isAuth().role !== 1) {
+    } else if (isAuth() && isAuth().role !== 1) {
       router.push(`/user`);
     }
   }, []);
